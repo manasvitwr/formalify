@@ -1,6 +1,6 @@
 # Formalify
 
-AI-powered tool to transform casual text into formal emails, todos, agendas, and structured documents using Google's Gemini API.
+AI-powered tool to transform casual text into formal emails, todos, agendas, and structured documents
 
 ## Features
 

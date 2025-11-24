@@ -111,7 +111,6 @@ npm run preview
 - Real-time transcription using Web Speech API
 - Permission status indicators for easy troubleshooting
 
-Contributions are welcome! Please follow these steps:
+Contributions are welcome!
 
-
----**Made with ❤️ by Manasvi**
+**Made with ❤️ by Manasvi**

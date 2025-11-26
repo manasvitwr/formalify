@@ -4,6 +4,8 @@ import { FormalifyCard } from './features/formalify/components/FormalifyCard'
 import { Footer } from './components/layout/Footer'
 import { Toaster } from 'sonner'
 import { useFormalityStore } from './features/formalify/store/formalify.store'
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -55,6 +57,8 @@ export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <AppContent />
+      <Analytics />
+      <SpeedInsights />
     </QueryClientProvider>
   )
 }

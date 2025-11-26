@@ -403,6 +403,10 @@ export function FormalifyCard() {
       if (error.includes('denied')) {
         setIsMicHelpModalOpen(true);
       }
+    },
+    onTimeout: () => {
+      toast.info('Session timeout reached. Converting text...');
+      handleConvert();
     }
   });
 
@@ -492,7 +496,8 @@ export function FormalifyCard() {
 
   const handleConvert = () => {
     if (!rawText.trim()) {
-      toast.error('Please enter some text')
+      // If triggered by timeout but empty, just ignore
+      if (!isHookListening) toast.error('Please enter some text')
       return
     }
 
@@ -555,6 +560,7 @@ export function FormalifyCard() {
         onMicClick={handleMicrophoneClick}
         isRecording={isRecording}
         disabled={isLoading}
+        placeholder={isRecording ? "Listening..." : "Type or speak"}
         onKeyDown={handleKeyDown}
         micPermissionStatus={permissionStatus}
         onHelpClick={() => setIsMicHelpModalOpen(true)}
